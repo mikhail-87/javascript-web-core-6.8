@@ -1,0 +1,449 @@
+/* Базовые стили и reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "TT Lakes", sans-serif;
+  background-color: #f8f8f8;
+  color: #1b1c21;
+}
+
+/* Скрытый контент для screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Шрифты */
+@font-face {
+  font-family: "TT Lakes";
+  src: url("../fonts/TT-Lakes/TTLakes-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("../fonts/TT-Lakes/TTLakes-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+/* ===== ХЕДЕР (МОБИЛЬНАЯ ВЕРСИЯ) ===== */
+.header {
+  background-color: #fff;
+  padding: 18px 16px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header__menu-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: url("../img/services/icons/ic/ic/burger.svg");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__logo {
+  height: 50px;
+  margin-left: 16px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+  position: relative;
+}
+
+.header__actions::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+}
+
+.header__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ff3e79;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header__btn--repair {
+  background-image: url("../img/services/icons/ic/repair.svg");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header__btn--status {
+  background-image: url("../img/services/icons/ic/ic/checkstatus.svg");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Иконки кнопок */
+.header__btn--phone::before,
+.header__btn--chat::before,
+.header__btn--profile::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__btn--phone::before {
+  background-image: url("../img/services/icons/ic/ic/call.svg");
+}
+
+.header__btn--chat::before {
+  background-image: url("../img/services/icons/ic/ic/chat.svg");
+}
+
+.header__btn--profile::before {
+  background-image: url("../img/services/icons/ic/ic/profile.svg");
+}
+
+/* На мобильной показываем только repair и status */
+.header__btn--phone,
+.header__btn--chat,
+.header__btn--profile {
+  display: none;
+}
+/* ===== ОСНОВНОЙ КОНТЕНТ (МОБИЛЬНАЯ ВЕРСИЯ) ===== */
+.main {
+  background-color: #f8f8f8;
+}
+
+.services__container {
+  padding: 24px 0;
+}
+
+.services__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+.services__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 20px;
+}
+
+.services__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #41f6d7;
+  border-radius: 0 2px 2px 0;
+}
+
+.services__actions {
+  display: none;
+}
+
+/* ===== НАВИГАЦИЯ С ГОРИЗОНТАЛЬНЫМ СКРОЛЛОМ ===== */
+.nav {
+  margin-bottom: 24px;
+  padding-left: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-right: 16px;
+}
+
+.nav__item {
+  flex-shrink: 0;
+}
+
+.nav__link {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #7e7e82;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.nav__link--active {
+  color: #7e7e82;
+  background-color: #ffffff;
+  border-color: #b8ffec;
+}
+
+.services__subnav {
+  display: none;
+}
+
+/* ===== КОНТЕНТ ===== */
+.services__content {
+  padding: 0 16px;
+}
+
+.services__text {
+  margin-bottom: 16px;
+}
+
+.services__paragraph {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #1b1c21;
+}
+
+.services__paragraph--extended {
+  display: none;
+}
+
+.services__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1b1c21;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.services__more-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/services/icons/ic/ic/expand.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.services__image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* ===== ПЛАНШЕТНАЯ ВЕРСИЯ (768px+) ===== */
+@media (min-width: 768px) {
+  .header__container {
+    padding: 0 24px;
+  }
+
+  /* Показываем дополнительные кнопки в хедере */
+  .header__btn--phone,
+  .header__btn--chat,
+  .header__btn--profile {
+    display: flex;
+  }
+
+  .header__actions {
+    gap: 16px;
+  }
+
+  .header__actions::before {
+    display: none;
+    content: "";
+    width: 2px;
+    height: 32px;
+    background-color: #eaeaea;
+    margin: 0 4px;
+  }
+
+  .header__menu-btn::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 32px;
+    background-color: #eaeaea;
+  }
+
+  .services__container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services__head {
+    padding: 0;
+  }
+
+  /* Навигация без скролла */
+  .nav {
+    padding-left: 0;
+    overflow-x: visible;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    padding-right: 0;
+  }
+
+  /* Двухколоночная раскладка */
+  .services__content {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .services__text {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .services__media {
+    flex: 0 0 360px;
+  }
+
+  .services__image {
+    width: 360px;
+    height: 208px;
+    object-fit: cover;
+  }
+  /* ===== ДЕСКТОПНАЯ ВЕРСИЯ (1120px+) ===== */
+  @media (min-width: 1120px) {
+    /* Скрываем хедер на десктопе */
+    .header {
+      display: none;
+    }
+
+    .services__container {
+      padding: 42px 32px;
+    }
+
+    .services__head {
+      margin-bottom: 32px;
+    }
+
+    /* Показываем кнопки действий */
+    .services__actions {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .services__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1b1c21;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .services__btn::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-color: #ff3e79;
+      border-radius: 50%;
+      background-size: 40px 40px;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .services__btn--repair::after {
+      background-image: url("../img/services/icons/ic/repair.svg");
+    }
+
+    .services__btn--status::after {
+      background-image: url("../img/services/icons/ic/ic/checkstatus.svg");
+    }
+
+    /* Показываем подменю "Отзывы" */
+    .services__subnav {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .services__subnav-link {
+      font-size: 14px;
+      color: #7e7e82;
+      text-decoration: none;
+    }
+
+    .services__content {
+      gap: 36px;
+    }
+
+    .services__media {
+      flex: 0 0 530px;
+    }
+
+    .services__image {
+      width: 530px;
+      height: 307px;
+    }
+
+    /* Показываем расширенный текст */
+    .services__paragraph--extended {
+      display: block;
+    }
+  }
+}
