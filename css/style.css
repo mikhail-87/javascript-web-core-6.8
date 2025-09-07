@@ -361,6 +361,11 @@ body {
     height: 208px;
     object-fit: cover;
   }
+
+  .services__paragraph--extended {
+    display: block;
+  }
+
   /* ===== ДЕСКТОПНАЯ ВЕРСИЯ (1120px+) ===== */
   @media (min-width: 1120px) {
     /* Скрываем хедер на десктопе */
