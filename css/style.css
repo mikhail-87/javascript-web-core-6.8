@@ -229,10 +229,6 @@ body {
   border-color: #b8ffec;
 }
 
-.services__subnav {
-  display: none;
-}
-
 /* ===== КОНТЕНТ ===== */
 .services__content {
   padding: 0 16px;
@@ -274,6 +270,10 @@ body {
   flex-shrink: 0;
 }
 
+.services__media {
+  margin: 0 -16px;
+}
+
 .services__image {
   width: 100%;
   height: auto;
@@ -296,15 +296,6 @@ body {
 
   .header__actions {
     gap: 16px;
-  }
-
-  .header__actions::before {
-    display: none;
-    content: "";
-    width: 2px;
-    height: 32px;
-    background-color: #eaeaea;
-    margin: 0 4px;
   }
 
   .header__menu-btn::after {
@@ -331,11 +322,10 @@ body {
   /* Навигация без скролла */
   .nav {
     padding-left: 0;
-    overflow-x: visible;
+    overflow-x: auto;
   }
 
   .nav__list {
-    flex-wrap: wrap;
     padding-right: 0;
   }
 
@@ -354,6 +344,7 @@ body {
 
   .services__media {
     flex: 0 0 360px;
+    margin: 0;
   }
 
   .services__image {
@@ -364,8 +355,10 @@ body {
 
   .services__paragraph--extended {
     display: block;
+    max-height: 2.6em;
+    overflow: hidden;
+    line-height: 1.3;
   }
-
   /* ===== ДЕСКТОПНАЯ ВЕРСИЯ (1120px+) ===== */
   @media (min-width: 1120px) {
     /* Скрываем хедер на десктопе */
@@ -375,10 +368,15 @@ body {
 
     .services__container {
       padding: 42px 32px;
+      max-width: none;
     }
 
     .services__head {
       margin-bottom: 32px;
+    }
+
+    .nav__list {
+      flex-wrap: wrap;
     }
 
     /* Показываем кнопки действий */
@@ -421,34 +419,9 @@ body {
       background-image: url("../img/services/icons/ic/ic/checkstatus.svg");
     }
 
-    /* Показываем подменю "Отзывы" */
-    .services__subnav {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .services__subnav-link {
-      font-size: 14px;
-      color: #7e7e82;
-      text-decoration: none;
-    }
-
-    .services__content {
-      gap: 36px;
-    }
-
-    .services__media {
-      flex: 0 0 530px;
-    }
-
-    .services__image {
-      width: 530px;
-      height: 307px;
-    }
-
     /* Показываем расширенный текст */
     .services__paragraph--extended {
       display: block;
     }
   }
-}
+
